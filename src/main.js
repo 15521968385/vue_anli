@@ -2,10 +2,24 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
 // 重置样式
 import '@/assets/reset.css'
-// vant样式
+// vant样式和组件
 import 'vant/lib/index.css';
+import { Icon,Button,Notify,Stepper,Dialog,Form,Field,Search  } from 'vant';
+Vue.use(Icon);
+Vue.use(Button);
+Vue.use(Notify);
+Vue.use(Stepper);
+Vue.use(Dialog);
+Vue.use(Form);
+Vue.use(Field);
+Vue.use(Search);
+
+//事件总线eventbus,实现兄弟组件传值
+export const eventBus = new Vue()
+
 
 // 引入math.js
 import * as math from 'mathjs'
@@ -43,15 +57,7 @@ Vue.directive('focus', {
 
 
 
-import { Icon,Button,Notify,Stepper,Dialog,Form,Field,Search  } from 'vant';
-Vue.use(Icon);
-Vue.use(Button);
-Vue.use(Notify);
-Vue.use(Stepper);
-Vue.use(Dialog);
-Vue.use(Form);
-Vue.use(Field);
-Vue.use(Search);
+
 
 Vue.config.productionTip = false
 
